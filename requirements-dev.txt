@@ -1,2 +1,1 @@
 -r requirements.txt
-uvicorn>=0.34.0,<1.0.0
