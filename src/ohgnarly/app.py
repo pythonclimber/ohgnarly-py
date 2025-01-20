@@ -1,13 +1,19 @@
-from urllib.request import Request
-
 from starlette.applications import Starlette
+from starlette.requests import Request
+from starlette.responses import FileResponse
 from starlette.routing import Route, Mount
 from starlette.staticfiles import StaticFiles
-from starlette.responses import PlainTextResponse, FileResponse
+from starlette.templating import Jinja2Templates
+
+templates = Jinja2Templates(directory="src/ohgnarly/templates")
 
 
-async def root(_):
-    return PlainTextResponse('Hello, world!', status_code=200)
+async def root(request: Request):
+    return templates.TemplateResponse(
+        request,
+        "layout.html",
+        context={"request": request},
+    )
 
 
 async def favicon(_):
