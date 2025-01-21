@@ -5,7 +5,21 @@ from starlette.routing import Route, Mount
 from starlette.staticfiles import StaticFiles
 from starlette.templating import Jinja2Templates
 
+
+def get_categories():
+    return ["Movies", "Music", "Games"]
+
+
+def get_users():
+    return [
+        {"firstName": "Aaron"},
+        {"firstName": "Darin"},
+    ]
+
+
 templates = Jinja2Templates(directory="src/ohgnarly/templates")
+templates.env.globals["get_categories"] = get_categories
+templates.env.globals["get_users"] = get_users
 
 
 async def root(request: Request):

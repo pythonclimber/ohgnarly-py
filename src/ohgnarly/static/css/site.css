@@ -258,15 +258,19 @@ a.gnarly-anchor {
     height: 20px;
     top: 22px;
   }
+
   .contentLogoContainer {
     width: 400px;
   }
+
   .contentContainter {
     width: 400px;
   }
+
   .mynav {
     display: none;
   }
+
   #siteLogo {
     height: 50px;
     width: 155px;
@@ -341,6 +345,22 @@ body {
 	float: left;
 	width: 100%;
 	white-space: nowrap;
+}
+
+#category-menu-item {
+    visibility: hidden;
+}
+
+#category-menu:hover #category-menu-item {
+    visibility: visible;
+}
+
+#user-menu-item {
+    visibility: hidden;
+}
+
+#user-menu:hover #user-menu-item {
+    visibility: visible;
 }
 
 .mynav ul a {

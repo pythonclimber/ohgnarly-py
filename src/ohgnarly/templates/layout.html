@@ -17,6 +17,28 @@
         <div class="heading-space"></div>
         <div id="siteHeader">
             <div id="headerContent">
+                <ul class="mynav">
+                    <li id="category-menu">
+                        <a>Categories</a>
+                        <ul id="category-menu-item">
+                            {% for category in get_categories() %}
+                            <li>
+                                <a>{{ category }}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                    <li id="user-menu">
+                        <a>Authors</a>
+                        <ul id="user-menu-item">
+                            {% for user in get_users() %}
+                            <li>
+                                <a>{{ user.firstName }}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                </ul>
                 <a>
                     <img src="static/ohGnarlyLogo.png" alt="" id="siteLogo">
                 </a>
